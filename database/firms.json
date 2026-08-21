@@ -1,0 +1,36 @@
+[
+  {
+    "id": "firm-001",
+    "name": "Your Company",
+    "domain": "yourcompany.com",
+    "idpType": "custom",
+    "idpConfig": {
+      "authority": "http://localhost:5001",
+      "redirectUri": "http://localhost:4200/callback"
+    }
+  },
+  {
+    "id": "firm-002",
+    "name": "ACME Corp",
+    "domain": "acme.com",
+    "idpType": "okta",
+    "idpConfig": {
+      "clientId": "your_okta_client_id",
+      "clientSecret": "your_okta_client_secret",
+      "discoveryUrl": "https://your-okta-domain.okta.com/.well-known/openid-configuration",
+      "redirectUri": "http://localhost:4200/callback"
+    }
+  },
+  {
+    "id": "firm-003",
+    "name": "TechCorp",
+    "domain": "techcorp.com",
+    "idpType": "onelogin",
+    "idpConfig": {
+      "clientId": "your_onelogin_client_id",
+      "clientSecret": "your_onelogin_client_secret",
+      "discoveryUrl": "https://your-onelogin-region.onelogin.com/.well-known/openid-configuration",
+      "redirectUri": "http://localhost:4200/callback"
+    }
+  }
+]

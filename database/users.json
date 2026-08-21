@@ -1,0 +1,38 @@
+[
+  {
+    "id": "user-001",
+    "email": "john@yourcompany.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "role": "user",
+    "passwordHash": "$2b$12$R9h7cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUm",
+    "salt": "$2b$12$R9h7cIPz0gi.URNNX3kh2O"
+  },
+  {
+    "id": "admin-001",
+    "email": "admin@yourcompany.com",
+    "firstName": "Admin",
+    "lastName": "User",
+    "role": "admin",
+    "passwordHash": "$2b$12$R9h7cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUm",
+    "salt": "$2b$12$R9h7cIPz0gi.URNNX3kh2O"
+  },
+  {
+    "id": "user-002",
+    "email": "alice@acme.com",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "role": "user",
+    "passwordHash": "$2b$12$R9h7cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUm",
+    "salt": "$2b$12$R9h7cIPz0gi.URNNX3kh2O"
+  },
+  {
+    "id": "user-003",
+    "email": "bob@techcorp.com",
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "role": "user",
+    "passwordHash": "$2b$12$R9h7cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUm",
+    "salt": "$2b$12$R9h7cIPz0gi.URNNX3kh2O"
+  }
+]
