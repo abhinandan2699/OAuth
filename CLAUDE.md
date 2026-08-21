@@ -48,27 +48,29 @@ OAuth/
 
 ## Implementation Phases
 
-### Phase 0: Setup ✓
+### Phase 0: Setup ✅
 - [x] Initialize git repository
 - [x] Create project folder structure
 - [x] Create blank .NET Backend project
 - [x] Create blank .NET IdentityServer project
 - [x] Create blank Angular Frontend project
 - [x] Create /database folder with initial structure
-- **Commit:** "Initial project scaffolding"
+- **Commit:** `179ddfc - Initial project scaffolding`
 
-### Phase 1: Database Setup
-- [ ] Create users.json with test data
-- [ ] Create firms.json with test data
-- [ ] Create test data helpers
-- **Commit:** "Add JSON database files with test data"
+### Phase 1: Database Setup ✅
+- [x] Create users.json with test data (4 users: 1 admin + 3 regular)
+- [x] Create firms.json with test data (3 firms: 1 custom + Okta + OneLogin)
+- [x] Create database/README.md with documentation
+- **Commit:** `7710602 - Add JSON database files with test data`
 
-### Phase 2: Backend - User Profile Endpoint
-- [ ] Create User model
-- [ ] Create UserService to read from users.json
-- [ ] Create UserController with GET /api/user/profile endpoint
-- [ ] Add JWT middleware (without validation for now)
-- **Commit:** "Add user profile endpoint"
+### Phase 2: Backend - User Profile Endpoint ✅
+- [x] Create User model (Models/User.cs)
+- [x] Create UserService to read from users.json (Services/UserService.cs)
+- [x] Create UserController with GET /api/user/profile endpoint
+- [x] Add JWT Bearer authentication middleware (claims extraction)
+- [x] Add CORS configuration
+- [x] Dependency injection setup
+- **Commit:** `039bbe7 - Add user profile endpoint to Backend API`
 
 ### Phase 3: Backend - Firm Config Endpoint
 - [ ] Create Firm model
@@ -257,5 +259,58 @@ npm start
 
 ---
 
+## Progress Summary
+
+**Current Status:** Phase 2 Complete ✅
+
+**Completed Phases:**
+- Phase 0: Project scaffolding ✅
+- Phase 1: Database setup with test data ✅
+- Phase 2: User profile endpoint ✅
+
+**Next:** Phase 3 - Firm config endpoint
+
+**Commits:**
+```
+039bbe7 - Add user profile endpoint to Backend API
+7710602 - Add JSON database files with test data
+179ddfc - Initial project scaffolding
+```
+
+## How to Test Backend Endpoints
+
+### 1. Start Backend API
+```bash
+cd Backend/Backend
+dotnet run
+# Should run on http://localhost:5000
+```
+
+### 2. Create a test JWT token (for now, any JWT will work since we skip validation)
+You can use https://jwt.io to create a test token with claims:
+```json
+{
+  "email": "john@yourcompany.com",
+  "sub": "user-001"
+}
+```
+
+### 3. Test the endpoint
+```bash
+curl -H "Authorization: Bearer <your-test-token>" \
+  http://localhost:5000/api/user/profile
+```
+
+**Expected Response:**
+```json
+{
+  "id": "user-001",
+  "email": "john@yourcompany.com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "role": "user"
+}
+```
+
 ## Next Steps
-Start with **Phase 0** to initialize projects, then proceed sequentially.
+Proceed with **Phase 3** - Firm config endpoint to complete backend API.
